@@ -1,0 +1,11 @@
+{
+  "name": "snake-client",
+  "version": "1.0.0",
+  "description": "snek game client",
+  "main": "play.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Prestin Liu",
+  "license": "MIT"
+}
