@@ -1,10 +1,12 @@
 const net = require("net");
-const connection_info = require("./connection_info");
 
 // establishes a connection with the game server
 // docs: https://nodejs.org/api/net.html#netcreateconnectionoptions-connectlistener
 const connect = function () {
-  const conn = net.createConnection(connection_info);
+  const conn = net.createConnection({
+    host: '10.44.20.115',
+    port: 50541,
+  });
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
