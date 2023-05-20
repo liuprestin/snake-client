@@ -1,5 +1,5 @@
 const net = require("net");
-const coninfo = require("./connection_info")
+const coninfo = require("./constants")
 
 // establishes a connection with the game server
 // docs: https://nodejs.org/api/net.html#netcreateconnectionoptions-connectlistener
