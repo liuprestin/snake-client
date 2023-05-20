@@ -15,22 +15,35 @@ conn.on("connect", () => {
   
 });
 
+// Keyboard input handling
+// stdin uses ansi escape sequences
+// like in here https://tldp.org/HOWTO/Bash-Prompt-HOWTO/x361.html
 const handleUserInput = function (inputKey) {
-  // your code here
-  /*
-  //movement commands
-  conn.write("Move: up");
-  conn.write("Move: down");
-  conn.write("Move: left");
-  conn.write("Move: right");
 
 
-  https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event
 
-  */
+//escape
  if (inputKey === '\u0003'){
   process.exit();
  }
+ if (inputKey === '\x1b[A')
+ {
+  conn.write("Move: up");
+ }
+ else if (inputKey === '\x1b[B')
+ {
+  conn.write("Move: down");
+ }
+ else if (inputKey === '\x1b[D')
+ {
+  conn.write("Move: left");
+ }
+ else if (inputKey === '\x1b[C')
+ {
+  conn.write("Move: right");
+ }
+
+
 };
 
 //Event listeners
