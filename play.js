@@ -11,9 +11,19 @@ conn.on("connect", () => {
   // code that does something when the connection is first established
   console.log("connected");
   conn.write("Name: CAT");
-  conn.write("Move: up");
   
 });
+
+
+const readline = require('readline');
+
+const rTTY = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+
+
 
 // Keyboard input handling
 // stdin uses ansi escape sequences
@@ -26,6 +36,18 @@ const handleUserInput = function (inputKey) {
  if (inputKey === '\u0003'){
   process.exit();
  }
+
+ //message - use spacebar
+ if (inputKey === ' '){
+  rTTY.question('Message:', (answer) => {
+    conn.write(`Say: ${answer}`);
+  
+    rTTY.close();
+  });
+ }
+ 
+
+ // control the snake
  if (inputKey === '\x1b[A')
  {
   conn.write("Move: up");
