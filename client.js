@@ -12,5 +12,10 @@ const connect = function () {
   return conn;
 };
 
+conn.on("connect", () => {
+  // code that does something when the connection is first established
+  console.log("connected");
+  conn.write("Name: CAT");
+});
 
 module.exports = connect;
