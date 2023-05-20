@@ -12,17 +12,6 @@ const connect = function () {
   return conn;
 };
 
-conn.on("connect", () => {
-  // code that does something when the connection is first established
-  console.log("connected");
-  conn.write("Name: CAT");
-  /*
-  //movement commands
-  conn.write("Move: up");
-  conn.write("Move: down");
-  conn.write("Move: left");
-  conn.write("Move: right");
-  */
-});
+
 
 module.exports = connect;
