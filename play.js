@@ -8,9 +8,9 @@ conn = connect();
 stdin = setupInput();
 
 conn.on("connect", () => {
-  // code that does something when the connection is first established
-  console.log("connected");
+  console.log("connected!");
   conn.write("Name: CAT");
+  conn.write(`Say: a CAT snake has joined the scene`);
 });
 
 const rTTY = readline.createInterface({
@@ -22,12 +22,12 @@ const rTTY = readline.createInterface({
 // stdin uses ansi escape sequences
 // like in here https://tldp.org/HOWTO/Bash-Prompt-HOWTO/x361.html
 const handleUserInput = function (inputKey) {
-  //escape
+  //ctrl-c to exit the client
   if (inputKey === "\u0003") {
     process.exit();
   }
 
-  //message - use spacebar
+  // <spacebar> to post a message
   if (inputKey === " ") {
     rTTY.question("Message:", (answer) => {
       conn.write(`Say: ${answer}`);

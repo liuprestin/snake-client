@@ -6,12 +6,9 @@ const coninfo = require("./constants")
 const connect = function () {
   const conn = net.createConnection(coninfo);
 
-  // interpret incoming data as text
   conn.setEncoding("utf8");
 
   return conn;
 };
-
-
 
 module.exports = connect;

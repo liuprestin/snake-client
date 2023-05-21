@@ -1,12 +1,23 @@
 Snek Client a snake game client
 
-### How to install 
+Play the as a cat-snake eating dots in the console
 
-- requires snek-multiplayer game 
-- 
+### How to install & run
 
-### How to run 
+external game server:
+- download [Snek game server](https://github.com/taniarascia/snek) 
+- from the (path)/snek root directory run: `npm install` & `npm run play`
 
-node play.js 
+this snake client:
+- form the (path)/snake-client root directory run `npm run` 
+- if the [Snek game server](https://github.com/taniarascia/snek) is running the client should say 'connected' and a playable snake should appear on the Snek screen
+- play the game!
 
-(may publish the package to npm ???)
+### Controls:
+
+Controls:
+
+- Keyboard arrow keys for up/down/left/right 
+- spacebar for sending a custom message to all snakes on the server 
+
+Thank You for checking out this game!
